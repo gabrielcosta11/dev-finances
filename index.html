@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dev.finance$</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal.css">
+</head>
+<body onload="App.appInit()">
+    <header>
+        <img src="assets/logo.svg" alt="">
+    </header>
+    <main>
+        <section id="balance">
+            <div class="card">
+                <h3>
+                    Entradas
+                    <img src="assets/income.svg" alt="">
+                </h3>
+                <p class="value-card">R$ 0,00</p>
+            </div>
+            <div class="card">
+                <h3>
+                    Saídas
+                    <img src="assets/expense.svg" alt="">
+                </h3>
+                <p class="value-card">R$ 0,00</p>
+            </div>
+            <div class="card">
+                <h3>
+                    Total
+                    <img src="assets/total.svg" alt="">
+                </h3>
+                <p class="value-card">R$ 0,00</p>
+            </div>
+        </section>
+        <div id="transactions">
+            <a id="button-new" href="#" onclick="Modal.open()">+ Nova Transação</a>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Data</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <h2>Nova Transação</h2>
+            <form action="" onsubmit="Form.submit(event)">
+                <div class="input-group">
+                    <input
+                        type="text"
+                        id="description"
+                        name="description"
+                        placeholder="Descrição"
+                    >
+                </div>
+                <div class="input-group">
+                    <input 
+                        type="number"
+                        id="amount"
+                        name="amount"
+                        placeholder="0,00"
+                        step="0.01"
+                    >
+                </div>
+                <small class="help">Use o sinal -(negativo) para despesas e ,(vírgula) para casas decimais</small>
+                <div class="input-group">
+                    <input 
+                        type="date"
+                        id="date"
+                        name="date"
+                    >
+                </div>
+                <div class="input-group actions">
+                    <a href="#" onclick="Modal.close()" class="button cancel">Cancelar</a>
+                    <button onclick="DOM.addTransaction()">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        Site desenvolvido por <a href="https://github.com/gabrielcosta11" rel="external" target="_blank">@Gabriel Costa</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
