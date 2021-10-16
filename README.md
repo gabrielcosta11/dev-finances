@@ -1,4 +1,4 @@
-<p text-align="center">
+<p align="center">
   <img alt="DevFinances" src="assets\logo.svg" width="160px">
 </p>
 
